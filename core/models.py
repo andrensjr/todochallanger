@@ -1,10 +1,9 @@
 from django.db import models
-from django.contrib import admin
 
 class Client(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, blank=False)
     email = models.CharField(max_length=200, null=True, blank=True)
-    enterprise = models.CharField(max_length=200, blank=True)
+    enterprise = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.name
